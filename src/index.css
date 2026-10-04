@@ -1,0 +1,193 @@
+/* ------------------------------------------------------------------
+   Little Lemon booking website - global styles.
+   Brand palette: yellow #F4CE14, green #495E57, cream #EDEFEE.
+   ------------------------------------------------------------------ */
+
+:root {
+  --yellow: #f4ce14;
+  --green: #495e57;
+  --dark: #333333;
+  --cream: #edefee;
+  --salmon: #ee9972;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--dark);
+  background-color: #ffffff;
+}
+
+h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; }
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--dark);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 100;
+}
+.skip-link:focus { left: 0; }
+
+/* ------------------------------- header ------------------------------ */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 5%;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo { height: 52px; width: auto; }
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 600;
+}
+.main-nav a:hover { color: var(--green); }
+
+/* -------------------------------- hero ------------------------------- */
+.hero {
+  background-color: var(--green);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 48px 5%;
+  flex-wrap: wrap;
+}
+
+.hero-title {
+  color: var(--yellow);
+  font-size: 56px;
+  margin: 0;
+}
+
+.hero-subtitle { font-size: 28px; margin: 4px 0 16px; }
+
+.hero-description {
+  max-width: 420px;
+  line-height: 1.6;
+  color: var(--cream);
+}
+
+.hero-image {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* ------------------------------ specials ----------------------------- */
+.specials { padding: 48px 5%; }
+
+.specials h2 { font-size: 32px; margin-top: 0; }
+
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.special-card {
+  background-color: var(--cream);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.special-card img { width: 100%; height: 180px; object-fit: cover; }
+.special-card div { padding: 16px; }
+.special-card h3 { margin: 0 0 8px; }
+.special-price { color: var(--salmon); font-weight: 700; }
+
+/* ------------------------------ booking ------------------------------ */
+.booking-page { padding: 48px 5%; max-width: 720px; margin: 0 auto; }
+.booking-page h1 { font-size: 36px; }
+
+.booking-form { display: flex; flex-direction: column; gap: 18px; }
+
+.booking-form label { font-weight: 600; margin-bottom: 4px; display: block; }
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #9ca3af;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  outline: 2px solid var(--yellow);
+  outline-offset: 1px;
+}
+
+.field-error { color: #b91c1c; font-size: 14px; margin: 4px 0 0; }
+
+.form-errors {
+  background-color: #fdecea;
+  border: 1px solid #f5c6c0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #b91c1c;
+}
+.form-errors ul { margin: 4px 0 0; padding-left: 20px; }
+
+.submit-button {
+  background-color: var(--yellow);
+  color: var(--dark);
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.submit-button:hover { background-color: #e0b910; }
+
+/* ---------------------------- confirmation --------------------------- */
+.confirmation {
+  text-align: center;
+  padding: 80px 5%;
+}
+.confirmation h1 { font-size: 40px; color: var(--green); }
+
+/* ------------------------------- footer ------------------------------ */
+.site-footer {
+  background-color: var(--green);
+  color: var(--cream);
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 32px 5%;
+  margin-top: 48px;
+}
+.site-footer img { height: 60px; }
+.site-footer p { margin: 4px 0; }
+
+/* ---------------------------- responsive ----------------------------- */
+@media (max-width: 768px) {
+  .hero { flex-direction: column; align-items: flex-start; }
+  .hero-title { font-size: 40px; }
+  .specials-grid { grid-template-columns: 1fr; }
+  .site-header { justify-content: center; }
+}
